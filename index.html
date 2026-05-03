@@ -574,7 +574,7 @@ const MARGIN_LABELS_BY_LANG = {
   en: ['≤10 pts', '11-20 pts', '21+ pts']
 };
 const INJURIES = [
-  { matchup: { zh: '魔術 vs 活塞（G7 · Tied 3-3 · 底特律主場）', en: 'Magic vs Pistons (G7 · tied 3-3 · Detroit home)' },
+  { matchup: { zh: '魔術 vs 活塞（G7 · Final · 活塞 116-94 勝出）', en: 'Magic vs Pistons (G7 · final · Pistons win 116-94)' },
     tags: [
       { cls: 'i-out', zh: '❌ Jonathan Isaac OUT（魔術，膝蓋）', en: '❌ Jonathan Isaac OUT (Magic, knee)' },
       { cls: 'i-q', zh: '❓ Jalen Duren GTD（活塞，膝蓋）', en: '❓ Jalen Duren GTD (Pistons, knee)' },
@@ -697,10 +697,10 @@ const MATCH_COUNT = 2;
 const ALLOW_EXTRA_G7 = false;
 let votes = new Array(MATCH_COUNT).fill(null), locked = false, g7Locked = false, myName = '';
 let margins = new Array(MATCH_COUNT).fill(null);
-let results = [null, null], latestDB = [];
-let marginResults = [null, null];
-let scoreA  = [null, null];
-let scoreB  = [null, null];
+let results = ['活塞', null], latestDB = [];
+let marginResults = [2, null];
+let scoreA  = [94, null];
+let scoreB  = [116, null];
 let modifyMode = false, myModified = false, hasSubmitted = false;
 
 function renderMatches() {
@@ -1293,10 +1293,10 @@ onSnapshot(query(colRef,orderBy('time')),(snap)=>{
 const unsubResults=onSnapshot(resultsRef,(snap)=>{
   if(snap.exists()){
     const d=snap.data();
-    results=[d.r0||null,d.r1||null];
-    scoreA=[d.a0||null,d.a1||null];
-    scoreB=[d.b0||null,d.b1||null];
-    marginResults=[d.m0??null,d.m1??null];
+    results=[d.r0||'活塞',d.r1||null];
+    scoreA=[d.a0||94,d.a1||null];
+    scoreB=[d.b0||116,d.b1||null];
+    marginResults=[d.m0??2,d.m1??null];
     updateCardScores();
     if(results.every(r=>r!==null)){
       const injBox=document.querySelector('.injury-box');
