@@ -383,7 +383,7 @@ const prevColRef = collection(fsdb, 'nba_0502_predict');
 const prevResultsRef = doc(fsdb, 'game_results', 'nba_0502');
 const PREV_MATCH_NAMES = ['活塞/魔術', '騎士/暴龍', '湖人/火箭', '塞爾/76人'];
 const PREV_SYM = ['🥇','🥈','🥉'], PREV_CLS = ['g','s','b'];
-let prevResults = [null, null, null, null], prevMarginResults = [null, null, null, null], prevDB = [];
+let prevResults = [null, null, null, '76人'], prevMarginResults = [null, null, null, 0], prevDB = [];
 let currentLang = localStorage.getItem('nba0504_lang') || 'zh';
 
 const I18N = {
@@ -666,8 +666,8 @@ onSnapshot(query(prevColRef, orderBy('time')), snap => {
 onSnapshot(prevResultsRef, snap => {
   if (snap.exists()) {
     const d = snap.data();
-    prevResults = [d.r0||null, d.r1||null, d.r2||null, d.r3||null];
-    prevMarginResults = [d.m0??null, d.m1??null, d.m2??null, d.m3??null];
+    prevResults = [d.r0||null, d.r1||null, d.r2||null, d.r3||'76人'];
+    prevMarginResults = [d.m0??null, d.m1??null, d.m2??null, d.m3??0];
   }
   renderPrevLB();
 });
