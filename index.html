@@ -145,6 +145,9 @@ h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(44px,9vw,76px);line-heigh
 .poster-btn{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#b7eec8,#5ec58e);color:#12392d;text-decoration:none;font-weight:900;font-size:15px;padding:14px 32px;border-radius:100px;box-shadow:0 6px 20px rgba(30,122,95,.22);transition:all .25s;letter-spacing:1px}
 .poster-btn:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(30,122,95,.3)}
 .poster-btn:active{transform:scale(.97)}
+.round2-link{margin-top:24px;text-align:center;animation:slideUp .45s ease both}
+.round2-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:linear-gradient(135deg,#17408B,#C9082A);color:#fff;text-decoration:none;font-weight:900;font-size:15px;padding:15px 34px;border-radius:100px;box-shadow:0 8px 24px rgba(23,64,139,.22);letter-spacing:1px;transition:all .25s}
+.round2-btn:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(23,64,139,.3)}
 
 #lb-section{margin-top:48px;animation:slideUp .5s ease both}
 .lb-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
@@ -265,14 +268,14 @@ h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(44px,9vw,76px);line-heigh
 <header>
   <div class="badge">🏀 NBA PLAYOFFS 2026 · 5/4</div>
   <h1 id="main-title">季後賽預測</h1>
-  <p class="sub" id="main-sub">兩場東區 G7 決戰 · 截止：5月4日 上午 3:30</p>
+  <p class="sub" id="main-sub">兩場東區 G7 完賽 · 活塞、騎士晉級二輪</p>
 </header>
 
 <div class="daily-intro">
-  <div class="intro-kicker" id="intro-kicker">🗓 5月4日 · 東區 Game 7 雙重決戰</div>
-  <div class="intro-quote" id="intro-quote">「兩個 3-3，兩座主場，四隊只剩 48 分鐘。今天不是系列賽，是淘汰賽。」</div>
+  <div class="intro-kicker" id="intro-kicker">✅ 5月4日 · 東區 Game 7 結果</div>
+  <div class="intro-quote" id="intro-quote">「活塞守住主場，騎士 114-102 收尾；東區第二輪對戰正式定案。」</div>
   <div class="intro-sour" id="intro-sour">
-    <strong>魔術</strong>從 3-2 領先被活塞拖回底特律，Banchero 要證明崩盤不是結局；<strong>Cade Cunningham</strong> 剛把活塞從懸崖邊拉回來，現在主場等著封王。晚場的 <strong>暴龍</strong> 靠 RJ Barrett 絕殺續命，<strong>騎士</strong> 回到克里夫蘭只剩一個任務：不要讓奇蹟再發生一次。
+    <strong>活塞</strong>拿下 Game 7 晉級第二輪；晚場 <strong>騎士</strong>以 114-102 擊敗暴龍，系列賽 4-3 收尾。5/4 預測榜單已依兩場結果更新，下一站請前往二輪系列賽預測。
   </div>
 </div>
 
@@ -357,6 +360,12 @@ h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(44px,9vw,76px);line-heigh
   </div>
 </div>
 
+<div class="round2-link">
+  <a class="round2-btn" href="https://maskywg.github.io/nba-round2-predict/" target="_blank">
+    🏀 前往季後賽二輪系列賽預測
+  </a>
+</div>
+
 </div>
 <div class="toast" id="toast"></div>
 
@@ -395,15 +404,15 @@ const I18N = {
     loading: '⏳ 載入中',
     waitingResults: '⏳ 賽果出爐後公布',
     prevTitle: '前回 5/2 預測結果',
-    analysisTitle: '🔥 2026 季後賽戰力分析',
-    analysisSub: '16 支隊伍完整評分 · 傷兵影響 · 板凳暴徒指數 →',
+    analysisTitle: '🔥 2026 季後賽二輪戰力分析',
+    analysisSub: '二輪四組對位 · 傷兵影響 · 板凳暴徒指數 →',
     espnTitle: 'ESPN 季後賽對陣表',
     espnSub: '查看完整季後賽 bracket →',
     mainTitle: '季後賽預測',
-    mainSub: '兩場東區 G7 決戰 · 截止：5月4日 上午 3:30',
-    introKicker: '🗓 5月4日 · 東區 Game 7 雙重決戰',
-    introQuote: '「兩個 3-3，兩座主場，四隊只剩 48 分鐘。今天不是系列賽，是淘汰賽。」',
-    introSour: '<strong>魔術</strong>從 3-2 領先被活塞拖回底特律，Banchero 要證明崩盤不是結局；<strong>Cade Cunningham</strong> 剛把活塞從懸崖邊拉回來，現在主場等著封王。晚場的 <strong>暴龍</strong> 靠 RJ Barrett 絕殺續命，<strong>騎士</strong> 回到克里夫蘭只剩一個任務：不要讓奇蹟再發生一次。',
+    mainSub: '兩場東區 G7 完賽 · 活塞、騎士晉級二輪',
+    introKicker: '✅ 5月4日 · 東區 Game 7 結果',
+    introQuote: '「活塞守住主場，騎士 114-102 收尾；東區第二輪對戰正式定案。」',
+    introSour: '<strong>活塞</strong>拿下 Game 7 晉級第二輪；晚場 <strong>騎士</strong>以 114-102 擊敗暴龍，系列賽 4-3 收尾。5/4 預測榜單已依兩場結果更新，下一站請前往二輪系列賽預測。',
     openTitle: '下注截止：5月4日 上午 03:30',
     openSub: '截止前可隨時修改，提交後即時顯示在排行榜',
     closedTitle: '⛔ 預測已截止',
@@ -479,15 +488,15 @@ const I18N = {
     loading: '⏳ Loading',
     waitingResults: '⏳ Winners will be shown after results are final',
     prevTitle: 'Previous 5/2 Results',
-    analysisTitle: '🔥 2026 Playoff Power Rankings',
-    analysisSub: 'Full 16-team ratings · injury impact · bench-mob index →',
+    analysisTitle: '🔥 2026 Round 2 Power Rankings',
+    analysisSub: 'Four second-round matchups · injury impact · bench-mob index →',
     espnTitle: 'ESPN Playoff Bracket',
     espnSub: 'View the full playoff bracket →',
     mainTitle: 'Playoff Predictions',
-    mainSub: 'Two Eastern Game 7s · Deadline: May 4, 3:30 AM',
-    introKicker: '🗓 May 4 · Eastern Game 7 Doubleheader',
-    introQuote: '"Two 3-3 series, two home courts, four teams down to 48 minutes. Today is not a series anymore. It is elimination basketball."',
-    introSour: '<strong>Orlando</strong> had a 3-2 lead before Detroit dragged the series back home, and Banchero has to prove the collapse is not the ending. <strong>Cade Cunningham</strong> just pulled the Pistons off the edge, and now Detroit gets the closeout stage. In the late game, the <strong>Raptors</strong> survived behind RJ Barrett, while the <strong>Cavaliers</strong> return to Cleveland with one job: do not let the miracle happen again.',
+    mainSub: 'Two Eastern Game 7s final · Pistons and Cavaliers advance',
+    introKicker: '✅ May 4 · Eastern Game 7 Results',
+    introQuote: '"Detroit held home court, Cleveland closed 114-102, and the East second round is now set."',
+    introSour: '<strong>Detroit</strong> won Game 7 to advance. In the late game, the <strong>Cavaliers</strong> beat Toronto 114-102 and closed the series 4-3. The 5/4 leaderboard now uses both final results, and the next stop is the Round 2 series prediction page.',
     openTitle: 'Prediction deadline: May 4, 3:30 AM',
     openSub: 'You can edit before the deadline. Submissions appear live on the leaderboard.',
     closedTitle: '⛔ Predictions closed',
@@ -697,10 +706,10 @@ const MATCH_COUNT = 2;
 const ALLOW_EXTRA_G7 = false;
 let votes = new Array(MATCH_COUNT).fill(null), locked = false, g7Locked = false, myName = '';
 let margins = new Array(MATCH_COUNT).fill(null);
-let results = ['活塞', null], latestDB = [];
-let marginResults = [2, null];
-let scoreA  = [94, null];
-let scoreB  = [116, null];
+let results = ['活塞', '騎士'], latestDB = [];
+let marginResults = [2, 1];
+let scoreA  = [94, 102];
+let scoreB  = [116, 114];
 let modifyMode = false, myModified = false, hasSubmitted = false;
 
 function renderMatches() {
@@ -1293,10 +1302,10 @@ onSnapshot(query(colRef,orderBy('time')),(snap)=>{
 const unsubResults=onSnapshot(resultsRef,(snap)=>{
   if(snap.exists()){
     const d=snap.data();
-    results=[d.r0||'活塞',d.r1||null];
-    scoreA=[d.a0||94,d.a1||null];
-    scoreB=[d.b0||116,d.b1||null];
-    marginResults=[d.m0??2,d.m1??null];
+    results=[d.r0||'活塞',d.r1||'騎士'];
+    scoreA=[d.a0||94,d.a1||102];
+    scoreB=[d.b0||116,d.b1||114];
+    marginResults=[d.m0??2,d.m1??1];
     updateCardScores();
     if(results.every(r=>r!==null)){
       const injBox=document.querySelector('.injury-box');
